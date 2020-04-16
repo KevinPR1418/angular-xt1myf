@@ -22,10 +22,34 @@ export class AppComponent  {
   user = {
     nama:'kevin'
   }
-
-  Pesan = '';
-  Klikbutton(){
-    this.Pesan = 'tombol di tea';
+  a;
+  b;
+  c;
+  numb : boolean;
+  star="***"
+  list =[
+    "***"
+    ]
+  Generate(){
+    this.c = Math.pow(this.a, this.b);
+    if(this.c%2!=0){
+      this.numb = true;
+      
+    }
+    else if(this.c%2==0){
+      this.numb = false;
+      for(var i = 3;i<=this.c;i++){
+        this.star+="*";
+        this.list.push(this.star);
+      }
+    }
   }
+
+  Clear(){
+    this.c = '';
+    this.a = '';
+    this.b = '';
+  }
+
 }
 

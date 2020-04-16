@@ -31,10 +31,24 @@
   </ng-template>
 
   <p>
-    <input [(ngModel)]="a" type="text">*
-    <input [(ngModel)]="b" type="text"> = 
-    <br> {{a*b}}
+    <input [(ngModel)]="a" type="text">^
+    <input [(ngModel)]="b" type="text"> = {{c}}
+
   </p>
 
-  <button (click)="Klikbutton()">Tekan</button>
-  {{Pesan}}
+  <button (click)="Generate()">Generate</button>
+  <button (click)="Clear()">Clear</button>
+  <ng-template *ngIf="numb;then ganjil; else genap">
+  </ng-template>
+
+  <ng-template #ganjil>
+    <p>Pola A</p>
+    
+  </ng-template>
+
+  <ng-template #genap>
+    <p>Pola B</p>
+    <div *ngFor = "let bintang of list;">
+      {{bintang}}
+    </div>
+  </ng-template>
