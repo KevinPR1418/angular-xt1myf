@@ -1,5 +1,40 @@
 <hello name="{{ name }}"></hello>
 <p>
   Start editing to see some magic happen :)
-  
+
+  <br/>
+  {{ "contoh awal" }}
+   <br/> <br/>
+   25+25={{25+25}}
 </p>
+  <div *ngFor = "let buah of item; let num = index">
+    {{num+1}}. {{buah.nama}} = {{buah.harga | currency:'Rp.'}}
+  </div>
+  <div *ngFor = "let data of arr; let num = index">
+    {{data}}
+  </div>
+  <p *ngIf="show">Tampilkan isi</p>
+
+  <p *ngIf="user.nama">
+    nama user: {{user.nama}}
+  </p>
+
+  <ng-template *ngIf="show;then showBlock; else notshowBlock">
+  </ng-template>
+
+  <ng-template #notshowBlock>
+    <p>ini not show block</p>
+  </ng-template>
+
+  <ng-template #showBlock>
+    <p>ini show block</p>
+  </ng-template>
+
+  <p>
+    <input [(ngModel)]="a" type="text">*
+    <input [(ngModel)]="b" type="text"> = 
+    <br> {{a*b}}
+  </p>
+
+  <button (click)="Klikbutton()">Tekan</button>
+  {{Pesan}}
